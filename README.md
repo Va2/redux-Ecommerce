@@ -1,3 +1,36 @@
+# ReactJS & Redux Ecommerce
+During the coding training at **MolenGeek** I made a Todo List to practice ReactJS.
+
+![Alt](https://raw.githubusercontent.com/Va2/react-todo-list/master/Screenshot.jpg)
+
+## Getting Started
+
+Clone this repository on your local machine.
+```
+git clone https://github.com/Va2/react-todo-list.git
+cd react-todo-list
+```
+Run the following command into the project folder to install project dependencies.
+```
+npm install
+```
+Run the following command into the project folder to run json-server
+```
+json-server public/db.json --port 8000 
+```
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+## Built With
+
+* [ReactJS](https://reactjs.org/)
+* [Redux](https://redux.js.org/)
+
+## Author(s)
+
+* **Vadim Brieven** - *Junior Web Developer* - [GitHub account](https://github.com/Va2)
+
+## Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -42,27 +75,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
