@@ -1,7 +1,7 @@
 # ReactJS & Redux Ecommerce
 During the coding training at **MolenGeek** I made a Todo List to practice ReactJS.
 
-![Alt](https://raw.githubusercontent.com/Va2/react-todo-list/master/Screenshot.jpg)
+![Alt](https://github.com/Va2/redux-Ecommerce/blob/master/Screenshot.jpg)
 
 ## Getting Started
 
