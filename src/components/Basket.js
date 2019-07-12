@@ -22,6 +22,10 @@ export default class Basket extends Component {
                             )}
                         </ul>
                         Total: {util.formatCurrency(cartItems.reduce((a, c) => a + c.price * c.count, 0))}
+
+                        <br />
+
+                        <button className="btn btn-primary" onClick={()=>alert("Checkout needs to be implemented...")}>Checkout</button>
                     </div>
                 }
             </div>

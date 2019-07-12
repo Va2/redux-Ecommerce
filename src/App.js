@@ -3,6 +3,8 @@ import './App.css';
 import Products from './components/Products';
 import Filter from './components/Filter';
 import Basket from './components/Basket';
+import { Provider } from 'react-redux';
+import store from './store';
 
 class App extends Component {
   constructor(props) {
@@ -19,14 +21,8 @@ class App extends Component {
   }
 
   componentWillMount() {
-    fetch("http://localhost:8000/products").then(res => res.json())
-    .then(data => this.setState({
-      products: data,
-      filteredProducts: data
-    }));
-
-    if (localStorage.getItem("cartItems")) {
-      this.setState({cartItems: JSON.parse(localStorage.getItem("cartItems"))});
+    if (localStorage.getItem('cartItems')) {
+      this.setState({cartItems: JSON.parse(localStorage.getItem('cartItems'))});
     }
   }
 
@@ -77,7 +73,7 @@ class App extends Component {
     this.setState(state => {
       const cartItems = state.cartItems.filter(elm => elm.id !== item.id);
 
-      localStorage.setItem("cartItem", cartItems);
+      localStorage.setItem("cartItems", cartItems);
     
       return {cartItems};
     })
@@ -85,33 +81,35 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h1>Ecommerce Shopping Cart Application</h1>
-        <hr />
-        <div className="row">
-          <div className="col-md-8">
-            <Filter 
-              size={this.state.size}
-              sort={this.state.sort}
-              handleChangeSize={this.handleChangeSize} handleChangeSort={this.handleChangeSort}
-              count={this.state.filteredProducts.length}
-            />
+      <Provider store={store}>
+        <div className="container">
+          <h1>Ecommerce Shopping Cart Application</h1>
+          <hr />
+          <div className="row">
+            <div className="col-md-8">
+              <Filter 
+                size={this.state.size}
+                sort={this.state.sort}
+                handleChangeSize={this.handleChangeSize} handleChangeSort={this.handleChangeSort}
+                count={this.state.filteredProducts.length}
+              />
 
-            <hr />
+              <hr />
 
-            <Products 
-              products={this.state.filteredProducts}
-              handleAddToCart={this.handleAddToCart}
-            />
-          </div>
-          <div className="col-md-4">
-            <Basket 
-              cartItems={this.state.cartItems}
-              handleRemoveFromCart={this.handleRemoveFromCart}
-            />
-          </div>
-        </div> 
-      </div>
+              <Products 
+                products={this.state.filteredProducts}
+                handleAddToCart={this.handleAddToCart}
+              />
+            </div>
+            <div className="col-md-4">
+              <Basket 
+                cartItems={this.state.cartItems}
+                handleRemoveFromCart={this.handleRemoveFromCart}
+              />
+            </div>
+          </div> 
+        </div>
+      </Provider>
     );
   }
 }
